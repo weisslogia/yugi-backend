@@ -1,6 +1,7 @@
 import express from 'express';
 import User from '../mongodb/models/user.js'
 import * as dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
 dotenv.config();
 const router = express.Router();
@@ -17,7 +18,7 @@ router.route('/me').get(async (req, res) => {
                 }
             },
             {$unwind: "$profile"},
-            {$match: {_id: req['user_info']._id}}
+            {$match: {_id: mongoose.Types.ObjectId(req['user_info']._id)}}
         ])
         me['password'] = ""
         res.send({ success: true, data: me })
