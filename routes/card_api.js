@@ -1,7 +1,7 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import {v2 as cloudinary} from 'cloudinary';
-import axios, {isCancel, AxiosError} from 'axios';
+import axios from 'axios';
 import Card from '../mongodb/models/card.js'
 
 dotenv.config();
