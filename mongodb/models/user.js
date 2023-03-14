@@ -8,7 +8,7 @@ const User = new mongoose.Schema({
     verify_phone_number: {type: String, required: false, default: false},
     password: {type: String, required: true},
     role: {type: String, required: true, default: 'duelist'},
-    profile_picture: {type: String, required: false},
+    profile_picture: {type: String, required: false, default: "https://res.cloudinary.com/dlhwybwvv/image/upload/v1678806333/profilePictures/icon_jvnzmq.png"},
     profile: {type:mongoose.Types.ObjectId}
 })
 const UserSchema = mongoose.model("User", User);
